@@ -2,7 +2,7 @@ from langchain_ollama import OllamaLLM
 from langchain_core.prompts import ChatPromptTemplate
 
 template = '''
-Answer the questions below.
+Answer the questions below precisely and with reasoning.
 
 Here is the conversation history : {context}
 
