@@ -42,5 +42,9 @@ def handle_conversation():
         # Update the context
         context += f"\nUser: {question}\nAI ({personality}): {result}"
 
+        # Save the conversation to a log file
+        with open("conversation_log.txt", "a") as log:
+            log.write(f"User: {question}\nAI ({personality}): {result}\n")
+
 if __name__ == "__main__":
     handle_conversation()
