@@ -63,26 +63,27 @@ def chatbot_app():
     # Initialize the app
     app = tk.Tk()
     app.title("Chatbot App")
+    app.configure(bg="black")
 
     # Chat history display
-    chat_history = scrolledtext.ScrolledText(app, state=tk.DISABLED, wrap=tk.WORD, width=60, height=20)
+    chat_history = scrolledtext.ScrolledText(app, state=tk.DISABLED, wrap=tk.WORD, width=60, height=20, bg="black", fg="white")
     chat_history.grid(row=0, column=0, columnspan=4, padx=10, pady=10)
 
     # Personality selection
-    personality_label = tk.Label(app, text=f"Personality: {personality.capitalize()}")
+    personality_label = tk.Label(app, text=f"Personality: {personality.capitalize()}", bg="black", fg="white")
     personality_label.grid(row=1, column=0, padx=10, pady=5)
 
-    tk.Button(app, text="Funny", command=lambda: set_personality("funny")).grid(row=1, column=1, padx=5, pady=5)
-    tk.Button(app, text="Sarcastic", command=lambda: set_personality("sarcastic")).grid(row=1, column=2, padx=5, pady=5)
-    tk.Button(app, text="Gen Z", command=lambda: set_personality("genz")).grid(row=1, column=3, padx=5, pady=5)
-    tk.Button(app, text="Smart", command=lambda: set_personality("smart")).grid(row=1, column=4, padx=5, pady=5)
+    tk.Button(app, text="Funny", command=lambda: set_personality("funny"), bg="gray", fg="white").grid(row=1, column=1, padx=5, pady=5)
+    tk.Button(app, text="Sarcastic", command=lambda: set_personality("sarcastic"), bg="gray", fg="white").grid(row=1, column=2, padx=5, pady=5)
+    tk.Button(app, text="Gen Z", command=lambda: set_personality("genz"), bg="gray", fg="white").grid(row=1, column=3, padx=5, pady=5)
+    tk.Button(app, text="Smart", command=lambda: set_personality("smart"), bg="gray", fg="white").grid(row=1, column=4, padx=5, pady=5)
 
     # Question entry
-    question_entry = tk.Entry(app, width=50)
+    question_entry = tk.Entry(app, width=50, bg="black", fg="white", insertbackground="white")
     question_entry.grid(row=2, column=0, columnspan=3, padx=10, pady=10)
 
     # Send button
-    send_button = tk.Button(app, text="Send", command=send_question)
+    send_button = tk.Button(app, text="Send", command=send_question, bg="gray", fg="white")
     send_button.grid(row=2, column=3, padx=10, pady=10)
 
     # Run the app
