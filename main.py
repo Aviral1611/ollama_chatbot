@@ -62,7 +62,7 @@ def chatbot_app():
 
     # Initialize the app
     app = tk.Tk()
-    app.title("Chatbot App")
+    app.title("Chatbot Ollama")
     app.configure(bg="black")
 
     # Chat history display
